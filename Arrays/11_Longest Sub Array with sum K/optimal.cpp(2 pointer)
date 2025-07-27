@@ -7,8 +7,8 @@
 //    
 
 // 🎯 Approach: optimal(2 pointer)(only for positives...if it includes negatives and zeroes the better soltuion is the optimal one)
-// 🕒 Time Complexity: 
-// 🛢️ Space Complexity: 
+// 🕒 Time Complexity: O(2n)
+// 🛢️ Space Complexity: O(1)
 //
 // ✍️ Author: Shakkara Hasini
 // 📅 Date: 2025-07-27
