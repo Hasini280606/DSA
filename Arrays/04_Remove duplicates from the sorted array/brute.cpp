@@ -13,8 +13,8 @@
 //     https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 //
 // 🎯 Approach: Brute
-// 🕒 Time Complexity: O(N)
-// 🛢️ Space Complexity: O(1)
+// 🕒 Time Complexity: O(NlogN + N)
+// 🛢️ Space Complexity: O(N)
 //
 // ✍️ Author: Shakkara Hasini
 // 📅 Date: 2025-07-27
