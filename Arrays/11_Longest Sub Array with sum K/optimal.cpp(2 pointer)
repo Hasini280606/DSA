@@ -1,0 +1,62 @@
+// 🚀 Problem: Longest Subarray with sum K(positives)
+// 📌 Category: Arrays
+// 📝 Problem Statement:
+//  Given an array nums of size n and an integer k, find the length of the longest sub-array that sums to k. If no such sub-array exists, return 0.
+
+// 🔗 Problem Link (if on LeetCode/GFG):
+//    
+
+// 🎯 Approach: optimal(2 pointer)(only for positives...if it includes negatives and zeroes the better soltuion is the optimal one)
+// 🕒 Time Complexity: 
+// 🛢️ Space Complexity: 
+//
+// ✍️ Author: Shakkara Hasini
+// 📅 Date: 2025-07-27
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int longestSubarray(int arr[],int n,int k){
+    int left = 0;
+    int right = 0;
+    int sum = arr[0];
+    int maxLen = 0;
+    while(right<n){
+        while(left<=right && sum>k){
+            sum -= arr[left];
+            left++;
+        }
+        if(sum == k){
+            maxLen = max(maxLen,right-left+1);
+        }
+        right++;
+        if(right<n) sum += arr[right];
+    }
+    return maxLen;
+}
+
+
+int main() {
+    int n;
+    cout << "Enter the size of array:  ";
+    cin >> n;
+
+    int k;
+    cout << "Enter the value of k: ";
+    cin >> k;
+
+    int arr[n]; 
+    for(int i=0;i<n;i++){
+        cout << "Enter the element " << i+1 << ": ";
+        cin >> arr[i];
+    }
+
+    cout << "Array: ";
+    for(int i=0;i<n;i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    cout << "length of longest subarray with sum k: " << longestSubarray(arr,n,k);
+    return 0;
+}
