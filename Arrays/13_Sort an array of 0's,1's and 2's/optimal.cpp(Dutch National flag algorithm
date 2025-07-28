@@ -1,0 +1,65 @@
+// 🚀 Problem: Sort an array of 0's,1's and 2's
+// 📌 Category: Arrays
+// 📝 Problem Statement:
+//  Given an array nums consisting of only 0, 1, or 2. Sort the array in non-decreasing order. The sorting must be done in-place, without making a copy of the original array.
+
+// 🔗 Problem Link (if on LeetCode/GFG):
+//    https://leetcode.com/problems/two-sum/description/
+
+// 🎯 Approach: Optimal
+// 🕒 Time Complexity: O(n)
+// 🛢️ Space Complexity: O(1) 
+//
+// ✍️ Author: Shakkara Hasini
+// 📅 Date: 2025-07-28
+
+// DUTCH NATIONAL FLAG ALGORITHM
+#include <bits/stdc++.h>
+using namespace std;
+
+void sortZeroOneTwo(int arr[],int n){
+    int low = 0;
+    int mid = 0;
+    int high = n-1;
+    while(mid<=high){
+        if(arr[mid]==0){
+            swap(arr[mid],arr[low]);
+            mid++;
+            low++;
+        }
+        else if(arr[mid]==1){
+            mid++;
+        }
+        else{
+            swap(arr[mid],arr[high]);
+            high--;
+        }
+    }
+}
+
+
+int main() {
+    int n;
+    cout << "Enter the size of array:  ";
+    cin >> n;
+
+    int arr[n]; 
+    for(int i=0;i<n;i++){
+        cout << "Enter the element " << i+1 << ": ";
+        cin >> arr[i];
+    }
+
+    cout << "Array: ";
+    for(int i=0;i<n;i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    
+    sortZeroOneTwo(arr,n);
+    cout << "The sorted array: ";
+    for(int i=0;i<n;i++){
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
+
